@@ -6,8 +6,8 @@ module Adminlte
       desc 'Copy AdminLTE Generators default files'
       source_root ::File.expand_path('../templates', __FILE__)
 
-      class_option :template_engine
-      class_option :layout_name
+      class_option :template_engine, :default => 'erb'
+      class_option :layout_name, :default => 'application'
       class_option :skip_turbolinks, :type => :boolean, :default => false, :desc => "Skip Turbolinks on assets"
 
       def copy_lib
