@@ -1,0 +1,32 @@
+<%% content_for :content_header  do %>
+  <section class="content-header">
+    <h1>Show <small><%= singular_table_name %></small></h1>
+  </section>
+<%% end %>
+
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+        <div class="box-header">
+          <div class="box-tools pull-right">
+            <%%= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), :class => 'btn btn-primary' do %>
+              <span class="glyphicon glyphicon-pencil"></span>
+              Edit
+            <%% end %>          
+          </div>
+        </div>
+        <div class="box-body">
+          <dl class="dl-horizontal">
+            <%- attributes.each do |attribute| -%>
+            <dt><%= attribute.human_name %>:</dt>
+            <dd><%%= @<%= singular_table_name %>.<%= attribute.name %> %></dd>
+
+            <%- end -%>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

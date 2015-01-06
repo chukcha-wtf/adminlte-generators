@@ -1,0 +1,47 @@
+<%% content_for :content_header  do %>
+  <section class="content-header">
+    <h1>Listing <small><%= plural_table_name %></small></h1>
+  </section>
+<%% end %>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-primary">
+        <div class="box-header">
+          <div class="box-tools pull-right">
+            <%%= link_to new_<%= singular_table_name %>_path(@<%= singular_table_name %>), :class => 'btn btn-success' do %>
+              <span class="glyphicon glyphicon-plus"></span>
+              New <%= human_name %>
+            <%% end %>          
+          </div>
+        </div>
+        <div class="box-body table-responsive">
+          <table class="table-hover">
+            <thead>
+              <tr>
+            <% attributes.each do |attribute| -%>
+                <th><%= attribute.human_name %></th>
+            <% end -%>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%%= content_tag_for(:tr, @<%= plural_table_name %>) do |<%= singular_table_name %>| %>
+            <% attributes.each do |attribute| -%>
+                <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+            <% end -%>
+                <td><%%= link_to 'Show', <%= singular_table_name %> %></td>
+                <td><%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %></td>
+                <td><%%= link_to 'Destroy', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <%% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

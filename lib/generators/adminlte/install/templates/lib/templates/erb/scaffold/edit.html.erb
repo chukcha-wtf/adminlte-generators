@@ -1,0 +1,9 @@
+<%% content_for :content_header  do %>
+  <section class="content-header">
+    <h1>
+      Editing <small><%%= link_to <%=singular_table_name %>,  @<%= singular_table_name %></small>
+    </h1>
+  </section>
+<%% end %>
+
+<%%= render 'form' %>

@@ -31,6 +31,8 @@
       <%%= render "layouts/<%= options[:layout_name] %>_sidebar" %>
     </aside>
     <aside class="right-side">
+      <%%= yield(:content_header) %>
+
       <%% flash.each do |name, msg| %>
         <div class="pad margin no-print">
           <%%= content_tag :div, :class => "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", :role => "alert" do %>
