@@ -31,4 +31,4 @@ TODO: Write usage instructions here
 5. Create a new Pull Request
 
 ## TODO:
-Provide tests for generators
+Write tests for generators
