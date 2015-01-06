@@ -7,6 +7,7 @@ module Adminlte
       source_root ::File.expand_path('../templates', __FILE__)
 
       class_option :template_engine, :default => 'erb'
+      class_option :stylesheet_engine, :default => 'scss'
       class_option :layout_name, :default => 'application'
       class_option :skin, :default => 'blue', desc: 'AdminLTE skin color'
       class_option :skip_turbolinks, :type => :boolean, :default => false, :desc => "Skip Turbolinks on assets"
@@ -25,6 +26,10 @@ module Adminlte
         template "layouts/_sidebar.html.#{options[:template_engine]}", "app/views/layouts/_#{options[:layout_name]}_sidebar.html.#{options[:template_engine]}"
       end
 
+      def create_stylesheets
+        copy_file "assets/stylesheets/adminlte_overrides.#{options[:stylesheet_engine]}", "app/assets/stylesheets/adminlte_overrides.#{options[:stylesheet_engine]}"
+      end
+
       def inject_adminlte
         application_js_path = "app/assets/javascripts/#{options[:layout_name]}.js"
         application_css_path = "app/assets/javascripts/#{options[:layout_name]}.css"
@@ -33,12 +38,6 @@ module Adminlte
           inject_into_file application_js_path, before: '//= require_tree' do
             "//= require adminlte/bootstrap\n"+
             "//= require adminlte/app"
-          end
-        end
-
-        if ::File.exists?(::File.join(destination_root, application_css_path))
-          inject_into_file application_css_path, before: '*= require_tree .' do
-            " *= require AdminLTE\n"
           end
         end
       end

@@ -1,0 +1,52 @@
+@import "AdminLTE";
+
+/* Removing stupid default logo font */
+body {
+  .header {
+    .logo {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+  }
+} 
+
+.btn.pull-right {
+  margin-left: 8px;
+}
+
+.spinner {
+  position: fixed;
+  top: 150px;
+  right: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.701961);
+  background-color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  z-index: 999999;
+  /* cursor: pointer; */
+  color: #dddddd;
+}
+
+i.glyphicon-sort {
+  cursor: pointer;
+}
+
+.thumbnail {
+  padding: 0;
+  border-radius: 0;
+}
+
+.btn {
+  border-radius: 1px;
+}
+
+.box {
+  border-radius: 1px;
+}
+
+.label {
+  border-radius: 0.05em;
+}
