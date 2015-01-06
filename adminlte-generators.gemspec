@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["pavlo.babenko@gmail.com"]
   spec.summary       = %q{AdminLTE-generators provides AdminLTE generators for Rails 4.}
   spec.description   = %q{AdminLTE-generators provides AdminLTE generators for Rails 4.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/chukcha-wtf/adminlte-generators"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
