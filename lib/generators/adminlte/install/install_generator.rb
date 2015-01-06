@@ -36,7 +36,7 @@ module Adminlte
         if ::File.exists?(::File.join(destination_root, application_js_path))
           inject_into_file application_js_path, before: '//= require_tree' do
             "//= require adminlte/bootstrap\n"+
-            "//= require adminlte/app"
+            "//= require adminlte/app\n"
           end
         end
       end
