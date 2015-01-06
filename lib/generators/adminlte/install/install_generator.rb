@@ -8,6 +8,7 @@ module Adminlte
 
       class_option :template_engine, :default => 'erb'
       class_option :layout_name, :default => 'application'
+      class_option :skin, :default => 'blue', desc: 'AdminLTE skin color'
       class_option :skip_turbolinks, :type => :boolean, :default => false, :desc => "Skip Turbolinks on assets"
 
       def copy_lib
@@ -20,6 +21,8 @@ module Adminlte
 
       def create_layout
         template "layouts/dashboard.html.#{options[:template_engine]}", "app/views/layouts/#{options[:layout_name]}.html.#{options[:template_engine]}"
+        template "layouts/_header.html.#{options[:template_engine]}", "app/views/layouts/_#{options[:layout_name]}_header.html.#{options[:template_engine]}"
+        template "layouts/_sidebar.html.#{options[:template_engine]}", "app/views/layouts/_#{options[:layout_name]}_sidebar.html.#{options[:template_engine]}"
       end
 
       def inject_adminlte
