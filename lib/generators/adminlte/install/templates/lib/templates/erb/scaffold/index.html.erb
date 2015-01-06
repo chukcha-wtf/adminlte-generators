@@ -1,6 +1,11 @@
 <%% content_for :content_header  do %>
   <section class="content-header">
     <h1>Listing <small><%= plural_table_name %></small></h1>
+
+    <ol class="breadcrumb">
+      <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active"><%= plural_table_name %></li>
+    </ol>    
   </section>
 <%% end %>
 
@@ -21,7 +26,7 @@
             <thead>
               <tr>
             <% attributes.each do |attribute| -%>
-                <th><%= attribute.human_name %></th>
+  <th><%= attribute.human_name %></th>
             <% end -%>
                 <th></th>
                 <th></th>
@@ -31,7 +36,7 @@
             <tbody>
               <%%= content_tag_for(:tr, @<%= plural_table_name %>) do |<%= singular_table_name %>| %>
             <% attributes.each do |attribute| -%>
-                <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+  <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
             <% end -%>
                 <td><%%= link_to 'Show', <%= singular_table_name %> %></td>
                 <td><%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %></td>

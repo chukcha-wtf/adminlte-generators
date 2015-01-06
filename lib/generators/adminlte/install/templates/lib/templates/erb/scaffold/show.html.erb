@@ -1,6 +1,12 @@
 <%% content_for :content_header  do %>
   <section class="content-header">
     <h1>Show <small><%= singular_table_name %></small></h1>
+
+    <ol class="breadcrumb">
+      <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><%%= link_to <%= plural_table_name %>, <%= plural_table_name %>_path %></li>
+      <li class="active">Show</li>
+    </ol>
   </section>
 <%% end %>
 
