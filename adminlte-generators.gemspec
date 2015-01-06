@@ -22,5 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
 
   spec.add_runtime_dependency "railties", ">= 3.1.0"
-  spec.add_runtime_dependency "adminlte"
+  spec.add_runtime_dependency "adminlte", ">= 1.3.0.1"
 end

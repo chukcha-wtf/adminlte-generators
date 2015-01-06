@@ -6,7 +6,7 @@
   <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>AdminLTE | Dashboard</title>
+  <title>AdminLTE::Dashboard</title>
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -14,21 +14,21 @@
   <![endif]-->
 
   <%- if options[:skip_turbolinks] -%>
-  <%%= stylesheet_link_tag    options[:layout_name], media: 'all' %>
-  <%%= javascript_include_tag options[:layout_name] %>
+  <%%= stylesheet_link_tag    '<%= options[:layout_name] %>', media: 'all' %>
+  <%%= javascript_include_tag '<%= options[:layout_name] %>' %>
   <%- else -%>
-  <%%= stylesheet_link_tag    options[:layout_name], media: 'all', 'data-turbolinks-track' => true %>
-  <%%= javascript_include_tag options[:layout_name], 'data-turbolinks-track' => true %>
+  <%%= stylesheet_link_tag    '<%= options[:layout_name] %>', media: 'all', 'data-turbolinks-track' => true %>
+  <%%= javascript_include_tag '<%= options[:layout_name] %>', 'data-turbolinks-track' => true %>
   <%- end -%>
   <%%= csrf_meta_tags %>
 </head>
-<body class="skin-<%= options[:skin] %> ">
+<body class="skin-<%= options[:skin] %>">
 
-  <%%= render "layouts/#{options[:layout_name]}_header" %>
+  <%%= render "layouts/<%= options[:layout_name] %>_header" %>
 
   <div class="wrapper row-offcanvas row-offcanvas-left">
     <aside class="left-side sidebar-offcanvas">
-      <%%= render "layouts/#{options[:layout_name]}_sidebar" %>
+      <%%= render "layouts/<%= options[:layout_name] %>_sidebar" %>
     </aside>
     <aside class="right-side">
       <%% flash.each do |name, msg| %>
@@ -40,7 +40,7 @@
         </div>
       <%% end %>
 
-      <%= yield %>
+      <%%= yield %>
     </aside>
   </div>
 

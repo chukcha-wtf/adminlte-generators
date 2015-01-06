@@ -12,11 +12,11 @@ module Adminlte
       class_option :skip_turbolinks, :type => :boolean, :default => false, :desc => "Skip Turbolinks on assets"
 
       def copy_lib
-        directory "lib/templates/#{options[:template_engine]}"
+        # directory "lib/templates/#{options[:template_engine]}"
       end
 
       def copy_form_builder
-        copy_file "form_builders/form_builder/_form.html.#{options[:template_engine]}", "lib/templates/#{options[:template_engine]}/scaffold/_form.html.#{options[:template_engine]}" 
+        # copy_file "form_builders/form_builder/_form.html.#{options[:template_engine]}", "lib/templates/#{options[:template_engine]}/scaffold/_form.html.#{options[:template_engine]}" 
       end
 
       def create_layout

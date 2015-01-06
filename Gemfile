@@ -4,4 +4,4 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'rails', ">= 4.0.0"
-gem 'adminlte'
+gem 'adminlte', ">= 1.3.0.1"
