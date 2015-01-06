@@ -32,7 +32,6 @@ module Adminlte
 
       def inject_adminlte
         application_js_path = "app/assets/javascripts/#{options[:layout_name]}.js"
-        application_css_path = "app/assets/javascripts/#{options[:layout_name]}.css"
 
         if ::File.exists?(::File.join(destination_root, application_js_path))
           inject_into_file application_js_path, before: '//= require_tree' do
