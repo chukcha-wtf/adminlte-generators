@@ -72,7 +72,7 @@ For sidebar links you could use `nav_link` helper:
 And if you want to create a treeview, just use `treeview_link` helper:
 
 ```ruby
-  <% treeview_link 'Lots of links here' do %>
+  <%= treeview_link 'Lots of links here' do %>
     <%= nav_link you_shall_not_path do %>
       <i class="fa fa-angle-double-right"></i>
       One Way
