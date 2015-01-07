@@ -58,6 +58,32 @@ AdminLTE comes with **blue** skin by default. If you wish to change it to **blac
 
 Run the generator with option `--skip-turbolinks` to remove turbolinks references from the generated layout.
 
+## Helpers
+Oh, btw you'll get 2 navigation helpers for free.
+
+For sidebar links you could use `nav_link` helper:
+
+```ruby
+  <%= nav_link root_path do %>
+    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+  <% end %>
+```
+
+And if you want to create a treeview, just use `treeview_link` helper:
+
+```ruby
+  <% treeview_link 'Lots of links here' do %>
+    <%= nav_link you_shall_not_path do %>
+      <i class="fa fa-angle-double-right"></i>
+      One Way
+    <% end %>
+    <%= nav_link you_shall__path do %>
+      <i class="fa fa-angle-double-right"></i>
+      Another
+    <% end %>
+  <% end %>
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/adminlte-generators/fork )

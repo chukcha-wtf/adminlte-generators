@@ -20,6 +20,10 @@ module Adminlte
         copy_file "form_builder/_form.html.#{options[:template_engine]}", "lib/templates/#{options[:template_engine]}/scaffold/_form.html.#{options[:template_engine]}" 
       end
 
+      def copy_nav_helper
+        copy_file "helpers/navigation_helper.rb", "app/helpers/nav_helper.rb"
+      end
+
       def create_layout
         template "layouts/dashboard.html.#{options[:template_engine]}", "app/views/layouts/#{options[:layout_name]}.html.#{options[:template_engine]}"
         template "layouts/_header.html.#{options[:template_engine]}", "app/views/layouts/_#{options[:layout_name]}_header.html.#{options[:template_engine]}"
