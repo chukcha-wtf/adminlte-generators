@@ -84,6 +84,12 @@ And if you want to create a treeview, just use `treeview_link` helper:
   <% end %>
 ```
 
+## Known issues
+
+There is an known issue with `gem spring`. In case if after running `rails g adminlte:install` your app will keep using default rails scaffold templates - you may need to restart spring or simply run your `rails g scaffold Model` or `rails g controller ControllerName` in another terminal window.
+
+If someone know how to fix this - please let me know or simply create a pull request.
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/adminlte-generators/fork )
