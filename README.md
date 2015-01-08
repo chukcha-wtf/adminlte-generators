@@ -1,11 +1,13 @@
 # Adminlte Generators
 
+[![Gem Version](https://badge.fury.io/rb/adminlte-generators.svg)](http://badge.fury.io/rb/adminlte-generators)
+
 AdminLTE generators provides easy [AdminLTE](http://almsaeedstudio.com/AdminLTE) integration with Rails 4. 
 AdminLTE is a rich [Twitter Bootstrap](http://getbootstrap.com/) admin template.
 
 ## Installation
 
-Add this line to your application's Gemfile, you'll need (adminlte)[https://github.com/chukcha-wtf/adminlte] gem installed:
+Add this line to your application's Gemfile, (you'll need [adminlte](https://github.com/chukcha-wtf/adminlte) gem installed):
 
 ```ruby
 gem 'adminlte'
@@ -92,7 +94,7 @@ If someone know how to fix this - please let me know or simply create a pull req
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/adminlte-generators/fork )
+1. Fork it ( https://github.com/chukcha-wtf/adminlte-generators/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
