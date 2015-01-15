@@ -16,6 +16,10 @@ module Adminlte
         directory "lib/templates/#{options[:template_engine]}"
       end
 
+      def copy_images
+        directory "img/", "public/img"
+      end
+
       def copy_form_builder
         copy_file "form_builder/_form.html.#{options[:template_engine]}", "lib/templates/#{options[:template_engine]}/scaffold/_form.html.#{options[:template_engine]}" 
       end
@@ -39,8 +43,8 @@ module Adminlte
 
         if ::File.exists?(::File.join(destination_root, application_js_path))
           inject_into_file application_js_path, before: '//= require_tree' do
-            "//= require adminlte/bootstrap\n"+
-            "//= require adminlte/app\n"
+            "//= require bootstrap\n"+
+            "//= require adminlte\n"
           end
         end
       end

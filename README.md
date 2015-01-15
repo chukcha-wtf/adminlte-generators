@@ -7,10 +7,9 @@ AdminLTE is a rich [Twitter Bootstrap](http://getbootstrap.com/) admin template.
 
 ## Installation
 
-Add this line to your application's Gemfile, (you'll need [adminlte](https://github.com/chukcha-wtf/adminlte) gem installed):
+Add this line to your application's Gemfile:
 
 ```ruby
-gem 'adminlte'
 gem 'adminlte-generators'
 ```
 
