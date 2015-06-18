@@ -8,7 +8,7 @@ module Adminlte
       initializer 'adminlte-generators.setup', group: :all do |app|
         app.config.assets.paths << ::Rails.root.join('app', 'assets', 'fonts')
 
-        app.config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
+        app.config.assets.precompile << /\.(?:svg|eot|woff|woff2|ttf)$/
       end
 
       config.app_generators do |g|
