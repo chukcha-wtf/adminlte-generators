@@ -32,6 +32,7 @@ module Adminlte
         template "layouts/dashboard.html.#{options[:template_engine]}", "app/views/layouts/#{options[:layout_name]}.html.#{options[:template_engine]}"
         template "layouts/_header.html.#{options[:template_engine]}", "app/views/layouts/_#{options[:layout_name]}_header.html.#{options[:template_engine]}"
         template "layouts/_sidebar.html.#{options[:template_engine]}", "app/views/layouts/_#{options[:layout_name]}_sidebar.html.#{options[:template_engine]}"
+        template "layouts/_footer.html.#{options[:template_engine]}", "app/views/layouts/_#{options[:layout_name]}_footer.html.#{options[:template_engine]}"
       end
 
       def create_stylesheets

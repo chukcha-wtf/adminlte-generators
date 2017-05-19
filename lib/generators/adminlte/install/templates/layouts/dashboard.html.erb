@@ -26,29 +26,24 @@
 
   <%%= render "layouts/<%= options[:layout_name] %>_header" %>
 
-  <div class="wrapper row-offcanvas row-offcanvas-left">
-    <aside class="left-side sidebar-offcanvas">
-      <%%= render "layouts/<%= options[:layout_name] %>_sidebar" %>
-    </aside>
-    <aside class="right-side">
-      <%%= yield(:content_header) %>
+  <%%= render "layouts/<%= options[:layout_name] %>_sidebar" %>
 
-      <%% flash.each do |name, msg| %>
-        <div class="pad margin no-print">
-          <%%= content_tag :div, :class => "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", :role => "alert" do %>
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-            <%%= msg %>
-          <%% end %>
-        </div>
-      <%% end %>
+  <div class="content-wrapper">
+    <%%= yield(:content_header) %>
 
-      <%%= yield %>
-    </aside>
+    <%% flash.each do |name, msg| %>
+      <div class="pad margin no-print">
+        <%%= content_tag :div, :class => "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", :role => "alert" do %>
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+          <%%= msg %>
+        <%% end %>
+      </div>
+    <%% end %>
+
+    <%%= yield %>
   </div>
 
-  <div class="spinner no-print hidden">
-    <img src="/img/ajax-loader.gif" alt="">
-  </div>
+  <%%= render "layouts/<%= options[:layout_name] %>_footer" %>
 
 </body>
 </html>
